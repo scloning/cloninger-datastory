@@ -1,0 +1,13 @@
+div.container {
+	max-width: 750px;
+	max-height: 465px;
+	}
+
+div.container img {
+	width: 100%;
+	height: auto;
+	}
+	
+header, article {
+	background-color: lightblue;
+	}
