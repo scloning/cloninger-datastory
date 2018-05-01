@@ -21,14 +21,28 @@
 /* ===================
    General styles
    =================== */
-	
-* {
-	font-size: 14px;
-	background-color: floralwhite;
-	} 
-p {
-	margin-left: 20px;
-	}  
+
+/* If screen size is less than 400px then set font size to 14px */
+@media screen and (max-width: 400px) {
+	* {
+		font-size: 14px;
+		background-color: ;
+		}
+	p { 
+		margin-left: 20px;
+		}
+}
+
+/* If screen is 401px or larger then set font size to 18px */
+@media screen and (min-width: 401px) {
+	* {
+		font-size: 14px;
+		background-color: floralwhite;
+		} 
+	p {
+		margin-left: 20px;
+		}
+}  
 	
 /* ===================
    Typography scheme
@@ -65,43 +79,105 @@ header p {
 	margin-top: 15px;
 	}
 	
-section#reddit {
-	display: grid;
-	grid-template-columns: repeat(2,1fr);
-	grid-template-rows: 30px;
-	grid-gap: 40px;	
-	}
-section#reddit h2 {
-	grid-column: 1 / span 2;
-	grid-row: 1;
-	}
-section#reddit p#left-text {
-	grid-column: 1;
-	grid-row: 2;
-	}
-section#reddit a {
-	grid-column: 2;
-	grid-row: 2;
-	} 
-	
-section#youtube {
-	display: grid;
-	grid-template-rows: repeat(2, 1fr);
-	grid-template-rows: 30px;
-	grid-gap: 20px;
-	}
-section#youtube h2 {
-	grid-column: 1 / span 2;
-	grid-row: 1;
-	}
-section#youtube div.vid-container {
-	grid-column: 1;
-	grid-row: 2;
-	}
-section#youtube p {
-	grid-column: 2;
-	grid-row: 2;
-	}
+/* Reddit grid displays as two columns for screens 	401px or larger */
+@media screen and (min-width: 401px) {
+	section#reddit {
+		display: grid;
+		grid-template-columns: repeat(2,1fr);
+		grid-template-rows: 30px;
+		grid-gap: 40px;	
+		}
+	section#reddit h2 {
+		grid-column: 1 / span 2;
+		grid-row: 1;
+		}
+	section#reddit p#left-text {
+		grid-column: 1;
+		grid-row: 2;
+		}
+	section#reddit a {
+		grid-column: 2;
+		grid-row: 2;
+		} 
+}
+
+/* Reddit grid displays as single column for screens 400px or less */
+@media screen and (max-width: 400px) {
+	section#reddit {
+		display: grid;
+		grid-column: 1;
+		grid-template-rows: repeat(4,1fr);
+		grid-gap: 40px;	
+		}
+	section#reddit h2 {
+		grid-column: 1;
+		grid-row: 1;
+		}
+	section#reddit a {
+		grid-column: 1;
+		grid-row: 2;
+		}
+	section#reddit p#left-text {
+		grid-column: 1;
+		grid-row: 3 / span 4;
+		} 
+}
+/* YouTube grid displays as two columns for screens 401px or larger */
+@media screen and (min-width: 401px) {	
+	section#youtube {
+		display: grid;
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-rows: 30px;
+		grid-gap: 20px;
+		}
+	section#youtube h2 {
+		margin-top: 0px;
+		grid-row: 1;
+		}
+	section#youtube div.vid-container {
+		margin-top: 20px;
+		margin-left: 20px;
+		grid-column: 1;
+		grid-row: 2;
+		}
+	section#youtube p {
+		grid-column: 2;
+		grid-row: 2;
+		}
+}
+
+/* YouTube grid displays as single column for screens 400px or less */
+@media screen and (max-width: 400px) {
+	section#youtube {
+		display: grid;
+		grid-columns: 1;
+		grid-rows: 4;
+		grid-gap: 20px;
+		}
+	section#youtube h2 {
+		margin-top: 0px;
+		grid-column: 1;
+		grid-row: 1;
+		}
+	section#youtube div.vid-container {
+		margin-top: 20px;
+		margin-left: 20px;
+		grid-column: 1;
+		grid-row: 3;
+		}
+	section#youtube p {
+		grid-column: 1;
+		grid-row: 3 / span 4;
+		}
+		
+}
+
+@media screen and (max-width: 500px) {
+    p {
+        color: lightblue;
+    }
+}
+
 	  
 /* ===================
    Header styles
@@ -119,6 +195,8 @@ header h1 {
 div.img-container {
 	max-width: 650px;
 	max-height: 365px;
+	min-width: 400px;
+	min-height: 115;
 	}
 div.img-container img {
 	width: 100%;
