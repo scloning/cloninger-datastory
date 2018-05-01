@@ -1,13 +1,145 @@
-div.container {
-	max-width: 750px;
-	max-height: 465px;
-	}
+/*===================
+  style.css
 
-div.container img {
-	width: 100%;
-	height: auto;
+  Index
+  - Import Fonts
+  - General
+  - Typography
+  - Grid
+  - Header
+  - Sections
+  - Footer
+
+  ===================*/
+
+/* ===================
+   Import fonts
+   =================== */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker');
+
+/* ===================
+   General styles
+   =================== */
+	
+* {
+	font-size: 14px;
+	background-color: floralwhite;
+	} 
+p {
+	margin-left: 20px;
+	}  
+	
+/* ===================
+   Typography scheme
+   =================== */
+
+h1, h2 {
+	font-family: 'Permanent Marker', cursive;
 	}
 	
-header, article {
-	background-color: lightblue;
+h1 {font-size: 2.5rem;}
+h2 {font-size: 1.75rem;}
+	
+p {
+	font-family: 'Open Sans', sans-serif;
 	}
+   
+/* ===================
+   Grid styles
+   =================== */
+
+header {
+	display:grid;
+	grid-template-rows: repeat(2,1fr);
+	grid-template-rows: 30px;
+	grid-gap: 20px;
+	}
+header h1 {
+	grid-column: 1;
+	grid-row: 1;
+	}
+header p {
+	grid-column 1;
+	grid-row: 2;
+	margin-top: 15px;
+	}
+	
+section#reddit {
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	grid-template-rows: 30px;
+	grid-gap: 40px;	
+	}
+section#reddit h2 {
+	grid-column: 1 / span 2;
+	grid-row: 1;
+	}
+section#reddit p#left-text {
+	grid-column: 1;
+	grid-row: 2;
+	}
+section#reddit a {
+	grid-column: 2;
+	grid-row: 2;
+	} 
+	
+section#youtube {
+	display: grid;
+	grid-template-rows: repeat(2, 1fr);
+	grid-template-rows: 30px;
+	grid-gap: 20px;
+	}
+section#youtube h2 {
+	grid-column: 1 / span 2;
+	grid-row: 1;
+	}
+section#youtube div.vid-container {
+	grid-column: 1;
+	grid-row: 2;
+	}
+section#youtube p {
+	grid-column: 2;
+	grid-row: 2;
+	}
+	  
+/* ===================
+   Header styles
+   =================== */
+
+header h1 {
+	margin-top: 1px;
+	margin-left: 2px;
+	}
+
+/* ===================
+   Section styles
+   =================== */
+
+div.img-container {
+	max-width: 650px;
+	max-height: 365px;
+	}
+div.img-container img {
+	width: 100%;
+	height: auto;
+	}   
+	
+iframe {
+	width: 100%;
+	}
+	
+/*section#reddit p#left-text {
+	margin-top: 20px;*/
+	}
+/* ===================
+   Footer styles
+   =================== */
+
+
+
+
+
+
+
+	
