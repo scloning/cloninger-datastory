@@ -23,10 +23,10 @@
    =================== */
 
 /* If screen size is less than 400px then set font size to 14px */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
 	* {
 		font-size: 14px;
-		background-color: ;
+		background-color: aliceblue;
 		}
 	p { 
 		margin-left: 20px;
@@ -34,9 +34,9 @@
 }
 
 /* If screen is 401px or larger then set font size to 18px */
-@media screen and (min-width: 401px) {
+@media screen and (min-width: 501px) {
 	* {
-		font-size: 14px;
+		font-size: 16px;
 		background-color: floralwhite;
 		} 
 	p {
@@ -80,7 +80,7 @@ header p {
 	}
 	
 /* Reddit grid displays as two columns for screens 	401px or larger */
-@media screen and (min-width: 401px) {
+@media screen and (min-width: 501px) {
 	section#reddit {
 		display: grid;
 		grid-template-columns: repeat(2,1fr);
@@ -102,7 +102,7 @@ header p {
 }
 
 /* Reddit grid displays as single column for screens 400px or less */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
 	section#reddit {
 		display: grid;
 		grid-column: 1;
@@ -110,6 +110,7 @@ header p {
 		grid-gap: 40px;	
 		}
 	section#reddit h2 {
+		margin-top: 0px;
 		grid-column: 1;
 		grid-row: 1;
 		}
@@ -123,7 +124,7 @@ header p {
 		} 
 }
 /* YouTube grid displays as two columns for screens 401px or larger */
-@media screen and (min-width: 401px) {	
+@media screen and (min-width: 501px) {	
 	section#youtube {
 		display: grid;
 		grid-template-rows: repeat(2, 1fr);
@@ -147,11 +148,11 @@ header p {
 }
 
 /* YouTube grid displays as single column for screens 400px or less */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
 	section#youtube {
 		display: grid;
 		grid-columns: 1;
-		grid-rows: 4;
+		grid-template-rows: 30px 50px 1fr 1fr;
 		grid-gap: 20px;
 		}
 	section#youtube h2 {
@@ -160,24 +161,18 @@ header p {
 		grid-row: 1;
 		}
 	section#youtube div.vid-container {
-		margin-top: 20px;
+		margin-top: 40px;
 		margin-left: 20px;
 		grid-column: 1;
-		grid-row: 3;
+		grid-row: 2;
 		}
 	section#youtube p {
+		margin-top: 300px;
 		grid-column: 1;
 		grid-row: 3 / span 4;
 		}
 		
 }
-
-@media screen and (max-width: 500px) {
-    p {
-        color: lightblue;
-    }
-}
-
 	  
 /* ===================
    Header styles
