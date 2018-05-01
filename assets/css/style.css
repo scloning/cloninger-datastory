@@ -26,7 +26,7 @@
 @media screen and (max-width: 500px) {
 	* {
 		font-size: 14px;
-		background-color: aliceblue;
+		background-color: powderblue;
 		}
 	p { 
 		margin-left: 20px;
@@ -36,7 +36,7 @@
 /* If screen is 401px or larger then set font size to 18px */
 @media screen and (min-width: 501px) {
 	* {
-		font-size: 16px;
+		font-size: 15px;
 		background-color: floralwhite;
 		} 
 	p {
@@ -51,6 +51,16 @@
 h1, h2 {
 	font-family: 'Permanent Marker', cursive;
 	}
+
+/* Headings centered if screen-size is 500px or less */
+@media screen and (max-width: 500px) {
+	h1, h2 {
+		text-align: center;
+		}
+	p#caption {
+		text-align: center;
+		}
+}
 	
 h1 {font-size: 2.5rem;}
 h2 {font-size: 1.75rem;}
@@ -73,10 +83,10 @@ header h1 {
 	grid-column: 1;
 	grid-row: 1;
 	}
-header p {
+section#intro p {
+	margin-top: 40px;
 	grid-column 1;
 	grid-row: 2;
-	margin-top: 15px;
 	}
 	
 /* Reddit grid displays as two columns for screens 	401px or larger */
@@ -106,8 +116,8 @@ header p {
 	section#reddit {
 		display: grid;
 		grid-column: 1;
-		grid-template-rows: repeat(4,1fr);
-		grid-gap: 40px;	
+		grid-template-rows: 30px 0px 1000px 30px;
+		grid-gap: 20px;	
 		}
 	section#reddit h2 {
 		margin-top: 0px;
@@ -115,14 +125,17 @@ header p {
 		grid-row: 1;
 		}
 	section#reddit a {
+		margin-top: 0px;
 		grid-column: 1;
 		grid-row: 2;
 		}
 	section#reddit p#left-text {
+		margin-top: 305px;
 		grid-column: 1;
 		grid-row: 3 / span 4;
 		} 
 }
+
 /* YouTube grid displays as two columns for screens 401px or larger */
 @media screen and (min-width: 501px) {	
 	section#youtube {
@@ -136,7 +149,6 @@ header p {
 		grid-row: 1;
 		}
 	section#youtube div.vid-container {
-		margin-top: 20px;
 		margin-left: 20px;
 		grid-column: 1;
 		grid-row: 2;
@@ -152,7 +164,7 @@ header p {
 	section#youtube {
 		display: grid;
 		grid-columns: 1;
-		grid-template-rows: 30px 50px 1fr 1fr;
+		grid-template-rows: 30px 40px 3fr 1fr;
 		grid-gap: 20px;
 		}
 	section#youtube h2 {
@@ -161,8 +173,8 @@ header p {
 		grid-row: 1;
 		}
 	section#youtube div.vid-container {
-		margin-top: 40px;
-		margin-left: 20px;
+		margin-top: 20px;
+/*		margin-left: 20px; */
 		grid-column: 1;
 		grid-row: 2;
 		}
@@ -170,8 +182,7 @@ header p {
 		margin-top: 300px;
 		grid-column: 1;
 		grid-row: 3 / span 4;
-		}
-		
+		}		
 }
 	  
 /* ===================
@@ -188,15 +199,25 @@ header h1 {
    =================== */
 
 div.img-container {
+ 	margin-top: 20px;
+ 	align-content: center;
+ /* maximum height for image container */
 	max-width: 650px;
 	max-height: 365px;
-	min-width: 400px;
+ /* minimum height for image container */
+	min-width: 300px;
 	min-height: 115;
 	}
 div.img-container img {
 	width: 100%;
 	height: auto;
 	}   
+	
+img {
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	}
 	
 iframe {
 	width: 100%;
