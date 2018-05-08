@@ -23,18 +23,19 @@
    =================== */
 
 /* If screen size is less than 400px then set font size to 14px */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
 	* {
 		font-size: 14px;
 		background-color: powderblue;
 		}
-	p { 
-		margin-left: 20px;
+	p, p#left-text { 
+		margin-left: 10px;
+		margin-right: 10px;
 		}
 }
 
 /* If screen is 401px or larger then set font size to 18px */
-@media screen and (min-width: 501px) {
+@media screen and (min-width: 401px) {
 	* {
 		font-size: 15px;
 		background-color: floralwhite;
@@ -53,7 +54,7 @@ h1, h2 {
 	}
 
 /* Headings centered if screen-size is 500px or less */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
 	h1, h2 {
 		text-align: center;
 		}
@@ -90,7 +91,7 @@ section#intro p {
 	}
 	
 /* Reddit grid displays as two columns for screens 	401px or larger */
-@media screen and (min-width: 501px) {
+@media screen and (min-width: 401px) {
 	section#reddit {
 		display: grid;
 		grid-template-columns: repeat(2,1fr);
@@ -112,7 +113,7 @@ section#intro p {
 }
 
 /* Reddit grid displays as single column for screens 400px or less */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
 	section#reddit {
 		display: grid;
 		grid-column: 1;
@@ -137,7 +138,7 @@ section#intro p {
 }
 
 /* YouTube grid displays as two columns for screens 401px or larger */
-@media screen and (min-width: 501px) {	
+@media screen and (min-width: 401px) {	
 	section#youtube {
 		display: grid;
 		grid-template-rows: repeat(2, 1fr);
@@ -160,7 +161,7 @@ section#intro p {
 }
 
 /* YouTube grid displays as single column for screens 400px or less */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
 	section#youtube {
 		display: grid;
 		grid-columns: 1;
@@ -200,6 +201,7 @@ header h1 {
 
 div.img-container {
  	margin-top: 20px;
+ 	margin-right: 20px;
  	align-content: center;
  /* maximum height for image container */
 	max-width: 650px;
