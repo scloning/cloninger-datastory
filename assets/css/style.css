@@ -22,10 +22,10 @@
    General styles
    =================== */
 
-/* If screen size is less than 400px then set font size to 14px */
-@media screen and (max-width: 400px) {
-	* {
-		font-size: 14px;
+/* If screen size is less than 600px then set font size to 16px */
+@media screen and (max-width: 600px) {
+	html {
+		font-size: 16px;
 		background-color: powderblue;
 		}
 	p, p#left-text { 
@@ -34,8 +34,8 @@
 		}
 }
 
-/* If screen is 401px or larger then set font size to 18px */
-@media screen and (min-width: 401px) {
+/* If screen is 601px or larger then set font size to 15px */
+@media screen and (min-width: 601px) {
 	* {
 		font-size: 15px;
 		background-color: floralwhite;
@@ -53,8 +53,8 @@ h1, h2 {
 	font-family: 'Permanent Marker', cursive;
 	}
 
-/* Headings centered if screen-size is 500px or less */
-@media screen and (max-width: 400px) {
+/* Headings centered if screen-size is 600px or less */
+@media screen and (max-width: 600px) {
 	h1, h2 {
 		text-align: center;
 		}
@@ -66,7 +66,7 @@ h1, h2 {
 h1 {font-size: 2.5rem;}
 h2 {font-size: 1.75rem;}
 	
-p {
+p, li {
 	font-family: 'Open Sans', sans-serif;
 	}
    
@@ -74,24 +74,48 @@ p {
    Grid styles
    =================== */
 
-header {
-	display:grid;
-	grid-template-rows: repeat(2,1fr);
-	grid-template-rows: 30px;
-	grid-gap: 20px;
-	}
-header h1 {
-	grid-column: 1;
-	grid-row: 1;
-	}
-section#intro p {
-	margin-top: 40px;
-	grid-column 1;
-	grid-row: 2;
-	}
+/* Intro grid display for screens 601px or larger */
+@media screen and (min-width: 601px) {
+	header {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 30px;
+		grid-gap: 20px;
+		}
+	header h1 {
+		grid-column: 1;
+		grid-row: 1;
+		}
+	section#intro p {
+		margin-top: 70px;
+		margin-bottom: 20px;
+		grid-column: 1;
+		grid-row: 2;
+		}
+}
+
+/* Intro grid display for screens 600px or less */
+@media screen and (max-width: 600px) {
+	header {
+		display: grid;
+		grid-template-columns: 1;
+		grid-template-rows: 30px;
+		grid-gap: 20px;
+		}
+	header h1 {
+		grid-column: 1;
+		grid-row: 1;
+		}
+	section#intro p {
+		margin-top: 70px;
+		margin-bottom: 40px;
+		grid-column: 1;
+		grid-row: 2;
+		}
+}
 	
-/* Reddit grid displays as two columns for screens 	401px or larger */
-@media screen and (min-width: 401px) {
+/* Reddit grid displays as two columns for screens 	601px or larger */
+@media screen and (min-width: 601px) {
 	section#reddit {
 		display: grid;
 		grid-template-columns: repeat(2,1fr);
@@ -103,6 +127,7 @@ section#intro p {
 		grid-row: 1;
 		}
 	section#reddit p#left-text {
+		margin-top: 40px;
 		grid-column: 1;
 		grid-row: 2;
 		}
@@ -112,12 +137,12 @@ section#intro p {
 		} 
 }
 
-/* Reddit grid displays as single column for screens 400px or less */
-@media screen and (max-width: 400px) {
+/* Reddit grid displays as single column for screens 600px or less */
+@media screen and (max-width: 600px) {
 	section#reddit {
 		display: grid;
 		grid-column: 1;
-		grid-template-rows: 30px 0px 1000px 30px;
+		grid-template-rows: 30px 0px 4fr 2fr;
 		grid-gap: 20px;	
 		}
 	section#reddit h2 {
@@ -131,26 +156,28 @@ section#intro p {
 		grid-row: 2;
 		}
 	section#reddit p#left-text {
-		margin-top: 305px;
+		margin-top: 365px;
 		grid-column: 1;
 		grid-row: 3 / span 4;
 		} 
 }
 
-/* YouTube grid displays as two columns for screens 401px or larger */
-@media screen and (min-width: 401px) {	
+/* YouTube grid displays as two columns for screens 601px or larger */
+@media screen and (min-width: 601px) {	
 	section#youtube {
 		display: grid;
-		grid-template-rows: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: 30px;
 		grid-gap: 20px;
 		}
 	section#youtube h2 {
 		margin-top: 0px;
+		margin-bottom: 50px;
 		grid-row: 1;
 		}
 	section#youtube div.vid-container {
-		margin-left: 20px;
+		margin-left: 10px;
+		margin-right: 10px;
 		grid-column: 1;
 		grid-row: 2;
 		}
@@ -160,12 +187,12 @@ section#intro p {
 		}
 }
 
-/* YouTube grid displays as single column for screens 400px or less */
-@media screen and (max-width: 400px) {
+/* YouTube grid displays as single column for screens 600px or less */
+@media screen and (max-width: 600px) {
 	section#youtube {
 		display: grid;
 		grid-columns: 1;
-		grid-template-rows: 30px 40px 3fr 1fr;
+		grid-template-rows: 65px 40px 650px;
 		grid-gap: 20px;
 		}
 	section#youtube h2 {
@@ -180,9 +207,9 @@ section#intro p {
 		grid-row: 2;
 		}
 	section#youtube p {
-		margin-top: 300px;
+		margin-top: 330px;
 		grid-column: 1;
-		grid-row: 3 / span 4;
+		grid-row: 3;
 		}		
 }
 	  
@@ -191,28 +218,28 @@ section#intro p {
    =================== */
 
 header h1 {
-	margin-top: 1px;
-	margin-left: 2px;
+	margin-top: 5px;
 	}
-
+	
 /* ===================
    Section styles
    =================== */
 
 div.img-container {
- 	margin-top: 20px;
- 	margin-right: 20px;
- 	align-content: center;
- /* maximum height for image container */
-	max-width: 650px;
-	max-height: 365px;
+	margin-left: auto;
+ 	margin-right: auto;
+ 	width: 80%;
+/* maximum height for image container */
+	max-width: 450px;
+	max-height: 165px;
  /* minimum height for image container */
-	min-width: 300px;
-	min-height: 115;
+	min-width: 250px;
+	min-height: 65px;
 	}
-div.img-container img {
-	width: 100%;
+div.img-container img, p#caption {
+ 	width: 100%;
 	height: auto;
+	text-align: center;
 	}   
 	
 img {
@@ -220,18 +247,27 @@ img {
 	border-width: 1px;
 	border-color: black;
 	}
+/* frame sizing for YouTube video */
+@media screen and (max-width: 600px) {
+	iframe {
+		width: 100%;
+		}
+}
+@media screen and (min-width: 601px) {
+	iframe {
+		padding-top: 50px;
+		width: 100%;
+		}
+}
 	
-iframe {
-	width: 100%;
-	}
-	
-/*section#reddit p#left-text {
-	margin-top: 20px;*/
-	}
 /* ===================
    Footer styles
    =================== */
-
+	
+footer h2 {
+	padding-top: 20px;
+	padding-bottom: 25px;
+	}
 
 
 
