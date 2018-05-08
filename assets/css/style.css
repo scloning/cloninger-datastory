@@ -176,8 +176,6 @@ p, li {
 		grid-row: 1;
 		}
 	section#youtube div.vid-container {
-		margin-left: 10px;
-		margin-right: 10px;
 		grid-column: 1;
 		grid-row: 2;
 		}
@@ -256,7 +254,15 @@ img {
 @media screen and (min-width: 601px) {
 	iframe {
 		padding-top: 50px;
+		margin-left: 20px;
+		margin-right: 20px;
 		width: 100%;
+		}
+	section#youtube p {
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 50px;
+		width: 90%;
 		}
 }
 	
